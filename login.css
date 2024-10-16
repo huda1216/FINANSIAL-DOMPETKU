@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(135deg, #0e86d4, #4ab2f7);
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px;
+}
+
+h1 {
+    margin-left: 20px;
+    font-size: 1.5rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.login-box label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-box input::placeholder {
+    color: #aaa;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.forgot-password a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.login-box button {
+    background-color: #4ab2f7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.login-box button:hover {
+    background-color: #0e86d4;
+}
