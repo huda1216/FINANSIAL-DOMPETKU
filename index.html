@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dompetku</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Gaya tambahan untuk pop-up boxes */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .popup h2 {
+            margin-top: 0;
+        }
+        .popup .close-btn {
+            display: block;
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+        .popup .close-btn:hover {
+            color: red;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dompetku</h1>
+            <center>
+                <button class="btn" onclick="openPopup('loginPopup')">Login</button>
+                <button class="btn" onclick="openPopup('registerPopup')">Register</button>
+            </center>
+        </header>
+        <main>
+            <div class="slogan">
+                <p><span class="highlight">Satu</span> Dompet Bisa</p>
+                <p>Untuk <span class="highlight">Semua</span> Transaksi</p>
+                <p><span class="bold-highlight">Bukan <span class="highlight">DOMPET</span> Biasa</span></p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Overlay for popups -->
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+    <!-- Login Popup -->
+    <div class="popup" id="loginPopup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h2>Login</h2>
+        <a href="login.html">
+            <button type="submit" class="btn">Login</button>
+        </a>
+        <button class="btn" onclick="showAlert('Login berhasil!')">Test Alert</button>
+    </div>
+
+    <!-- Register Popup -->
+    <div class="popup" id="registerPopup">
+        <span class="close-btn" onclick="closePopup()">×</span>
+        <h2>Register</h2>
+        <a href="register.html">
+            <button type="submit" class="btn">Register</button>
+        </a>
+        <button class="btn" onclick="showAlert('Registrasi berhasil!')">Test Alert</button>
+    </div>
+
+    <script>
+        // Function to open a specific popup
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Function to close all popups
+        function closePopup() {
+            document.getElementById('loginPopup').style.display = 'none';
+            document.getElementById('registerPopup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Function to show an alert box
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>
